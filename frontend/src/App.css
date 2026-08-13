@@ -1,0 +1,207 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Eras Demi ITC", sans-serif;
+  background-color: #f4f4f9;
+}
+
+/* ---------- Home page (converted from your original tour.html/tourpage.css) ---------- */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.slideshow {
+  position: relative;
+  height: 70vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* 7 images now, so the fade cycle covers 7 * 4s = 28s total */
+.slideshow img:not(.logo) {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  animation: fade 28s infinite;
+}
+
+.slideshow img:nth-child(1) { animation-delay: 0s; }
+.slideshow img:nth-child(2) { animation-delay: 4s; }
+.slideshow img:nth-child(3) { animation-delay: 8s; }
+.slideshow img:nth-child(4) { animation-delay: 12s; }
+.slideshow img:nth-child(5) { animation-delay: 16s; }
+.slideshow img:nth-child(6) { animation-delay: 20s; }
+.slideshow img:nth-child(7) { animation-delay: 24s; }
+
+@keyframes fade {
+  0%, 100% { opacity: 0; }
+  2%, 12% { opacity: 1; }
+  15%, 100% { opacity: 0; }
+}
+
+.logo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: contain;
+  z-index: 2;
+  animation: none !important;
+  opacity: 1 !important;
+}
+
+.content {
+  padding: 20px 20px 40px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 16px;
+}
+
+.tags {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.tags button {
+  padding: 10px 20px;
+  font-size: 20px;
+  background-color: #abbfe6;
+  border: 2px solid #145a80;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.tags button:hover {
+  background-color: #032062;
+  color: white;
+}
+
+h2 {
+  font-size: 38px;
+  color: rgb(35, 82, 120);
+  font-family: "Cooper Black", serif;
+}
+
+p {
+  max-width: 90%;
+  margin: 0 auto;
+  font-size: 20px;
+  color: #09172e;
+  line-height: 1.5;
+  text-align: justify;
+}
+
+.read-more {
+  background-color: #251e88;
+  color: #c0cfdb;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  border: none;
+  margin-bottom: 30px;
+}
+
+.read-more:hover {
+  background-color: #032062;
+  color: white;
+}
+
+/* ---------- Tour list / detail / booking pages ---------- */
+
+.tour-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  padding: 30px;
+}
+
+.tour-card {
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.tour-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.tour-card-body {
+  padding: 16px;
+}
+
+.tour-card-body h3 {
+  color: rgb(35, 82, 120);
+  margin-bottom: 6px;
+}
+
+.tour-card-body button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #251e88;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.detail-page, .booking-page {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.booking-page form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.booking-page input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.booking-page button {
+  padding: 10px;
+  background-color: #251e88;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.clear-filter {
+  display: block;
+  margin: 0 auto 20px;
+  background: none;
+  border: 1px solid #145a80;
+  color: #145a80;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+}
